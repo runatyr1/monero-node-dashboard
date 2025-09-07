@@ -1,105 +1,139 @@
-# 🛸 Monero Node Alien Dashboard
+# 🛸 Alien-Themed Monero Node Dashboard
 
-Un dashboard con tema extraterrestre para monitorear datos de un nodo Monero en tiempo real.
+A futuristic alien-themed web dashboard for real-time monitoring of Monero node data with spectacular space visuals.
 
-## 🚀 Características
+## 🚀 Features
 
-- **Tema Alien**: Diseño futurista con efectos visuales extraterrestres
-- **Actualización en Tiempo Real**: Los datos se actualizan automáticamente cada 10 segundos
-- **Métricas Completas**: Muestra información detallada del nodo Monero:
-  - Estado de sincronización
-  - Altura de bloque actual
-  - Conexiones activas
-  - Información del último bloque
-  - Estimaciones de comisiones
-  - Hash rate de la red
-  - Tamaño de base de datos
+- **Alien Theme**: Futuristic design with extraterrestrial visual effects
+- **Real-time Updates**: Data refreshes automatically every 10 seconds
+- **Comprehensive Metrics**: Displays detailed Monero node information:
+  - Synchronization status
+  - Current block height
+  - Active connections
+  - Latest block information
+  - Transaction fee estimates
+  - Network hash rate
+  - Database size
 
-## 📋 Requisitos
+## 🌟 Visual Features
+
+- **Deep Space Background**: Twinkling stars and colorful nebula clouds
+- **Alien Eyes**: Subtle floating orbs with sparkly effects
+- **Smooth Animations**: Gentle text glow cycles and card scanning effects
+- **Responsive Design**: Works perfectly on mobile devices
+- **Neon Color Scheme**: Green alien-tech aesthetic
+
+## 📋 Requirements
 
 - Python 3.7+
-- Nodo Monero ejecutándose en `192.168.122.185:18081` (contenedor Docker)
-- Túnel SSH hacia la VM con el nodo Monero
-- Dependencias Python: Flask, requests
+- Monero node running on `192.168.122.185:18081` (Docker container)
+- SSH tunnel to VM with Monero node
+- Python dependencies: Flask, requests
 
-## 🛠 Instalación y Ejecución
+## 🛠 Installation & Setup
 
-1. **Establecer túnel SSH al nodo Monero:**
-   ```bash
-   # Conectar con túnel de puerto desde tu máquina local
-   ssh -L 18081:172.18.0.4:18081 user1@192.168.122.185
-   # Mantener esta conexión activa en una terminal separada
-   ```
+### 1. **Establish SSH tunnel to Monero node:**
+```bash
+# Connect with port tunnel from your local machine
+ssh -L 18081:172.18.0.4:18081 user1@192.168.122.185
+# Keep this connection active in a separate terminal
+```
 
-2. **Instalar dependencias (en otra terminal):**
-   ```bash
-   cd /home/user1/syslab-nosync/1-projects/0-claude-demo-1
-   python3 -m venv venv
-   source venv/bin/activate
-   pip install -r requirements.txt
-   ```
+### 2. **Install dependencies (in another terminal):**
+```bash
+cd /path/to/monero-node-dashboard
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
 
-3. **Ejecutar el dashboard:**
-   ```bash
-   # Opción 1: Usando el script
-   ./run.sh
-   
-   # Opción 2: Directamente con Python
-   source venv/bin/activate
-   python app.py
-   ```
+### 3. **Run the dashboard:**
+```bash
+# Option 1: Using the script
+./run.sh
 
-4. **Acceder al dashboard:**
-   - Abrir navegador web en: `http://localhost:8282`
-   - O desde otra máquina en la red: `http://[IP_DEL_SERVIDOR]:8282`
+# Option 2: Directly with Python
+source venv/bin/activate
+python app.py
+```
 
-## 🌐 Endpoints API
+### 4. **Access the dashboard:**
+- Open web browser at: `http://localhost:8282`
+- Or from another machine on network: `http://[SERVER_IP]:8282`
 
-- `GET /` - Dashboard principal
-- `GET /api/data` - Datos JSON del nodo Monero
-- `GET /api/health` - Estado de salud de la aplicación
+## 🌐 API Endpoints
 
-## ⚙️ Configuración
+- `GET /` - Main dashboard interface
+- `GET /api/data` - JSON data from Monero node
+- `GET /api/health` - Application health status
 
-El nodo Monero debe estar configurado para:
+## ⚙️ Configuration
+
+The Monero node must be configured for:
 - Host: `192.168.122.185`
-- Puerto: `18081` (puerto estándar)
-- RPC habilitado
+- Port: `18081` (standard port)
+- RPC enabled
 
-## 🔄 Frecuencias de Actualización
+## 🔄 Update Frequencies
 
-- **Información del nodo**: Cada 30 segundos
-- **Información de bloques**: Cada 10 segundos
-- **Conexiones**: Cada 60 segundos
-- **Estimación de comisiones**: Cada 120 segundos
-- **Dashboard web**: Cada 10 segundos
+- **Node information**: Every 30 seconds
+- **Block information**: Every 10 seconds
+- **Connections**: Every 60 seconds
+- **Fee estimates**: Every 120 seconds
+- **Web dashboard**: Every 10 seconds
+- **Star twinkling**: 8-12 seconds
+- **Text glow**: 7 seconds
 
-## 🎨 Características Visuales
+## 🎨 Animation Details
 
-- Animaciones de fondo alienígenas
-- Efectos de brillo y pulsación
-- Ojos alienígenas flotantes
-- Esquema de colores verde neón
-- Responsive design para móviles
+- **Background nebulae**: Subtle colorful clouds
+- **Twinkling starfield**: Hundreds of stars with varied colors and sizes  
+- **Alien eyes**: Floating sparkly orbs
+- **Card scanning**: Left-to-right glow effects
+- **Text pulsing**: Gentle 7-second glow cycles
 
-## 🐛 Solución de Problemas
+## 🐛 Troubleshooting
 
-1. **Error de conexión al nodo**:
-   - Verificar que el nodo Monero esté ejecutándose
-   - Confirmar la IP y puerto del nodo
-   - Verificar configuración de firewall
+### 1. **Node connection error**:
+- Verify Monero node is running
+- Check IP and port configuration
+- Verify firewall settings
 
-2. **Dependencias**:
-   - Asegurar que el entorno virtual esté activado
-   - Reinstalar dependencias: `pip install -r requirements.txt`
+### 2. **Dependencies**:
+- Ensure virtual environment is activated
+- Reinstall dependencies: `pip install -r requirements.txt`
 
-3. **Puerto ocupado**:
-   - Cambiar puerto en `app.py` línea final: `app.run(host='0.0.0.0', port=NUEVO_PUERTO)`
+### 3. **Port occupied**:
+- Change port in `app.py` final line: `app.run(host='0.0.0.0', port=NEW_PORT)`
 
-## 📱 Compatibilidad
+### 4. **SSH tunnel issues**:
+- Verify tunnel is active: `netstat -tulpn | grep 18081`
+- Check Docker container IP: `docker inspect btcpayserver_monerod`
+
+## 📱 Browser Compatibility
 
 - Chrome/Chromium 90+
 - Firefox 88+
 - Safari 14+
 - Edge 90+
-- Responsive en dispositivos móviles
+- Mobile responsive design
+
+## 🚀 Development
+
+Built with:
+- **Backend**: Python Flask
+- **Frontend**: Pure HTML/CSS/JavaScript
+- **Styling**: CSS3 animations and gradients
+- **Data**: Monero RPC API integration
+
+## 📸 Screenshots
+
+The dashboard features:
+- Real-time Monero metrics in alien-themed cards
+- Deep space background with hundreds of twinkling stars
+- Floating alien eyes with sparkly effects
+- Smooth animations and responsive layout
+
+---
+
+*An alien technology dashboard for monitoring your Monero node* 👽🛸
