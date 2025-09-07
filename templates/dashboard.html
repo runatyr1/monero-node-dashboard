@@ -33,11 +33,11 @@
             position: fixed;
             top: 0;
             left: 0;
-            width: 1px;
-            height: 1px;
+            width: 1.5px;
+            height: 1.5px;
             background: transparent;
             pointer-events: none;
-            z-index: 1;
+            z-index: -2;
             box-shadow: 
                 185px 78px #ffffff, 1240px 305px #ffffff, 678px 1420px #ffffff, 1456px 985px #ffffff,
                 789px 234px #ffffff, 1678px 567px #ffffff, 234px 1234px #ffffff, 1890px 456px #ffffff,
@@ -88,47 +88,37 @@
                 1456px 1456px #ffffff, 123px 1123px #ffffff, 1234px 567px #ffffff, 678px 234px #ffffff,
                 1567px 1890px #ffffff, 890px 345px #ffffff, 456px 1456px #ffffff, 1789px 1234px #ffffff,
                 567px 678px #ffffff, 1123px 456px #ffffff, 345px 123px #ffffff, 1890px 789px #ffffff;
-            animation: twinkle 25s ease-in-out infinite;
+            animation: twinkle 8s ease-in-out infinite;
         }
         
-        /* Medium colored stars - Layer 2 */
+        /* Subtle sparkly orbs - Layer 2 */
         body::after {
             content: '';
             position: fixed;
             top: 0;
             left: 0;
-            width: 2px;
-            height: 2px;
-            background: transparent;
+            width: 4.5px;
+            height: 4.5px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 0%, transparent 70%);
+            border-radius: 50%;
             pointer-events: none;
-            z-index: 1;
+            z-index: -1;
             box-shadow:
-                320px 150px #87ceeb, 1100px 600px #ffd700, 850px 1200px #ff69b4, 1350px 300px #00ced1,
-                450px 800px #dda0dd, 1550px 450px #98fb98, 200px 1350px #f0e68c, 1750px 750px #ffa07a,
-                650px 250px #20b2aa, 950px 1450px #deb887, 1250px 550px #b0c4de, 550px 950px #f5deb3,
-                1650px 100px #ffb6c1, 350px 1250px #d3d3d3, 1050px 650px #ffefd5, 750px 350px #e0ffff,
-                1450px 1050px #ffe4e1, 250px 750px #f0fff0, 1850px 850px #fff8dc, 150px 450px #fffacd,
-                1150px 1150px #fdf5e6, 850px 50px #faf0e6, 450px 1550px #fff5ee, 1550px 250px #f5fffa,
-                980px 720px #e6e6fa, 1420px 380px #fff0f5, 280px 1180px #ffefd5, 1720px 580px #f0f8ff,
-                420px 980px #87ceeb, 1620px 280px #ffd700, 780px 1380px #ff69b4, 1480px 680px #00ced1,
-                180px 1480px #dda0dd, 1380px 180px #98fb98, 580px 1180px #f0e68c, 1780px 580px #ffa07a,
-                380px 880px #20b2aa, 1680px 380px #deb887, 880px 1680px #b0c4de, 80px 1080px #f5deb3,
-                1580px 480px #ffb6c1, 480px 1580px #d3d3d3, 1280px 280px #ffefd5, 680px 1280px #e0ffff,
-                1080px 680px #ffe4e1, 280px 80px #f0fff0, 1880px 1080px #fff8dc, 180px 280px #fffacd,
-                1180px 1880px #fdf5e6, 780px 80px #faf0e6, 480px 1780px #fff5ee, 1580px 1280px #f5fffa,
-                880px 480px #e6e6fa, 1680px 880px #fff0f5, 280px 1680px #ffefd5, 80px 280px #f0f8ff,
-                1480px 1480px #87ceeb, 380px 380px #ffd700, 1780px 1780px #ff69b4, 580px 580px #00ced1,
-                1380px 1380px #dda0dd, 680px 680px #98fb98, 1180px 1180px #f0e68c, 780px 780px #ffa07a,
-                80px 80px #20b2aa, 1880px 1880px #deb887, 180px 180px #b0c4de, 1680px 1680px #f5deb3,
-                480px 480px #ffb6c1, 1280px 1280px #d3d3d3, 880px 880px #ffefd5, 1580px 1580px #e0ffff,
-                320px 1720px #ffe4e1, 1520px 120px #f0fff0, 720px 1320px #fff8dc, 1920px 520px #fffacd,
-                120px 920px #fdf5e6, 1320px 720px #faf0e6, 920px 320px #fff5ee, 520px 1920px #f5fffa,
-                1720px 320px #e6e6fa, 320px 1520px #fff0f5, 1120px 920px #ffefd5, 520px 120px #f0f8ff,
-                920px 1720px #87ceeb, 1920px 920px #ffd700, 120px 320px #ff69b4, 720px 1120px #00ced1,
-                1520px 520px #dda0dd, 220px 1220px #98fb98, 1220px 220px #f0e68c, 620px 1620px #ffa07a,
-                1020px 420px #20b2aa, 820px 1020px #deb887, 1620px 1420px #b0c4de, 420px 820px #f5deb3,
-                220px 620px #ffb6c1, 1820px 1220px #d3d3d3, 1420px 620px #ffefd5, 20px 1420px #e0ffff;
-            animation: twinkle 35s ease-in-out infinite reverse;
+                320px 150px 2px rgba(135, 206, 235, 0.2), 1100px 600px 1px rgba(255, 215, 0, 0.25), 850px 1200px 2px rgba(255, 105, 180, 0.15),
+                1350px 300px 1px rgba(0, 206, 209, 0.2), 450px 800px 2px rgba(221, 160, 221, 0.18), 1550px 450px 1px rgba(152, 251, 152, 0.15),
+                200px 1350px 2px rgba(240, 230, 140, 0.12), 1750px 750px 1px rgba(255, 160, 122, 0.2), 650px 250px 2px rgba(32, 178, 170, 0.16),
+                950px 1450px 1px rgba(222, 184, 135, 0.14), 1250px 550px 2px rgba(176, 196, 222, 0.18), 550px 950px 1px rgba(245, 222, 179, 0.12),
+                1650px 100px 2px rgba(255, 182, 193, 0.15), 350px 1250px 1px rgba(211, 211, 211, 0.1), 1050px 650px 2px rgba(255, 239, 213, 0.12),
+                750px 350px 1px rgba(224, 255, 255, 0.15), 1450px 1050px 2px rgba(255, 228, 225, 0.1), 250px 750px 1px rgba(240, 255, 240, 0.12),
+                1850px 850px 2px rgba(255, 248, 220, 0.14), 150px 450px 1px rgba(255, 250, 205, 0.16), 1150px 1150px 2px rgba(253, 245, 230, 0.1),
+                850px 50px 1px rgba(250, 240, 230, 0.12), 450px 1550px 2px rgba(255, 245, 238, 0.14), 1550px 250px 1px rgba(245, 255, 250, 0.1),
+                980px 720px 2px rgba(230, 230, 250, 0.15), 1420px 380px 1px rgba(255, 240, 245, 0.12), 280px 1180px 2px rgba(255, 239, 213, 0.1),
+                1720px 580px 1px rgba(240, 248, 255, 0.14), 420px 980px 2px rgba(135, 206, 235, 0.16), 1620px 280px 1px rgba(255, 215, 0, 0.18),
+                780px 1380px 2px rgba(255, 105, 180, 0.12), 1480px 680px 1px rgba(0, 206, 209, 0.15), 180px 1480px 2px rgba(221, 160, 221, 0.14),
+                1380px 180px 1px rgba(152, 251, 152, 0.12), 580px 1180px 2px rgba(240, 230, 140, 0.1), 1780px 580px 1px rgba(255, 160, 122, 0.16),
+                380px 880px 2px rgba(32, 178, 170, 0.12), 1680px 380px 1px rgba(222, 184, 135, 0.1), 880px 1680px 2px rgba(176, 196, 222, 0.14),
+                80px 1080px 1px rgba(245, 222, 179, 0.1), 1580px 480px 2px rgba(255, 182, 193, 0.12), 480px 1580px 1px rgba(211, 211, 211, 0.08);
+            animation: sparkle 12s ease-in-out infinite reverse;
         }
         
         @keyframes twinkle {
@@ -138,12 +128,19 @@
             75% { opacity: 0.6; }
         }
         
+        @keyframes sparkle {
+            0%, 100% { opacity: 0.2; transform: scale(1); }
+            25% { opacity: 0.4; transform: scale(1.1); }
+            50% { opacity: 0.6; transform: scale(1.2); }
+            75% { opacity: 0.3; transform: scale(1.05); }
+        }
+        
         .container {
             max-width: 1400px;
             margin: 0 auto;
             padding: 20px;
             position: relative;
-            z-index: 2;
+            z-index: 10;
         }
         
         .header {
@@ -157,7 +154,7 @@
             font-weight: 900;
             color: #00ff41;
             text-shadow: 0 0 5px #00ff41, 0 0 10px #00ff41;
-            animation: pulse 86s ease-in-out infinite;
+            animation: pulse 7s ease-in-out infinite;
             margin-bottom: 10px;
         }
         
@@ -169,7 +166,7 @@
         
         @keyframes pulse {
             0%, 100% { text-shadow: 0 0 5px #00ff41, 0 0 10px #00ff41; }
-            50% { text-shadow: 0 0 8px #00ff41, 0 0 15px #00ff41, 0 0 20px #00ff41; }
+            50% { text-shadow: 0 0 6px #00ff41, 0 0 12px #00ff41, 0 0 14px #00ff41; }
         }
         
         .status-indicator {
@@ -287,7 +284,12 @@
             text-align: center;
             font-size: 1.2em;
             color: #39ff14;
-            animation: pulse 1s ease-in-out infinite;
+            animation: loadingPulse 7s ease-in-out infinite;
+        }
+        
+        @keyframes loadingPulse {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
         }
         
         .chart-container {
@@ -306,12 +308,18 @@
         
         .alien-eye {
             position: fixed;
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
-            background: radial-gradient(circle, #00ff41, #39ff14);
-            opacity: 0.7;
-            animation: blink 4s infinite, float 6s ease-in-out infinite;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 0%, rgba(0, 255, 65, 0.4) 30%, rgba(57, 255, 20, 0.25) 70%, transparent 100%);
+            opacity: 0.5;
+            z-index: -3;
+            animation: alienSparkle 6s ease-in-out infinite, float 9s ease-in-out infinite;
+            box-shadow: 
+                0 0 15px rgba(0, 255, 65, 0.2),
+                inset 0 0 8px rgba(255, 255, 255, 0.3),
+                inset 3px -3px 8px rgba(0, 255, 65, 0.15);
+            backdrop-filter: blur(1px);
         }
         
         .alien-eye:nth-child(1) {
@@ -332,15 +340,18 @@
             animation-delay: 3s;
         }
         
-        @keyframes blink {
-            0%, 90%, 100% { opacity: 0.7; }
-            95% { opacity: 0.1; }
+        @keyframes alienSparkle {
+            0%, 100% { opacity: 0.3; transform: scale(1) rotate(0deg); }
+            25% { opacity: 0.5; transform: scale(1.1) rotate(90deg); }
+            50% { opacity: 0.7; transform: scale(1.15) rotate(180deg); }
+            75% { opacity: 0.4; transform: scale(1.05) rotate(270deg); }
         }
         
         @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            33% { transform: translateY(-10px) rotate(120deg); }
-            66% { transform: translateY(10px) rotate(240deg); }
+            0%, 100% { transform: translateY(0px) translateX(0px); }
+            25% { transform: translateY(-8px) translateX(3px); }
+            50% { transform: translateY(-5px) translateX(-3px); }
+            75% { transform: translateY(8px) translateX(2px); }
         }
     </style>
 </head>
