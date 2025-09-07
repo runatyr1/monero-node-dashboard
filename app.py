@@ -130,5 +130,16 @@ def health_check():
         'timestamp': datetime.now().isoformat()
     })
 
+@app.route('/api/block/<int:height>')
+def get_block_by_height(height):
+    try:
+        block_data = monero_client.get_block_header(height)
+        if block_data:
+            return jsonify(block_data)
+        else:
+            return jsonify({'error': 'Block not found or node unavailable'}), 404
+    except Exception as e:
+        return jsonify({'error': f'Failed to fetch block: {str(e)}'}), 500
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8282, debug=True)
